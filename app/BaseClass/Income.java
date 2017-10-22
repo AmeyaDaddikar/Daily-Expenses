@@ -6,7 +6,7 @@ public class Income extends Data{
 		
 	public Income(){
 		super();
-		income_category = ANONYMOUS;
+		income_category = IncomeCategory.ANONYMOUS;
 	}
 	
 	public Income(String description, IncomeCategory category){

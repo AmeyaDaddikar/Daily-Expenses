@@ -6,7 +6,7 @@ public class Expense extends Data{
 	
 	public Expense(){
 		super();
-		expense_category = 
+		expense_category = ExpenseCategory.ANONYMOUS;
 	}
 	
 	public Expense(String description){
