@@ -1,3 +1,5 @@
+package BaseClass;
+
 public class Income extends Data{
 	
 	private IncomeCategory income_category;

@@ -1,3 +1,5 @@
+package BaseClass;
+
 import java.time.LocalDateTime;
 
 public class Data {

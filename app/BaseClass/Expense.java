@@ -1,3 +1,5 @@
+package BaseClass;
+
 public class Expense extends Data{
 	
 	private ExpenseCategory expense_category;
