@@ -9,14 +9,19 @@ public class Expense extends Data{
 		expense_category = ExpenseCategory.ANONYMOUS;
 	}
 	
-	public Expense(String description,ExpenseCategory category){
-		super(description);
+	public Expense(String description,float amount,ExpenseCategory category){
+		super(description,amount);
 		expense_category = category;
 	}
 	
 }
 
+//ENUM, JUST TO MAKE THE CATEGORIES DISTINCTIVE
 enum ExpenseCategory {
-	CASH,CARD,STATIONARY,ANONYMOUS;
+	CASH(1),CARD(2),STATIONARY(3),ANONYMOUS(4);
+	public int value;  
 	
+	public ExpenseCategory(int value){  
+	this.value = value;  
+
 }

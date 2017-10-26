@@ -9,14 +9,19 @@ public class Income extends Data{
 		income_category = IncomeCategory.ANONYMOUS;
 	}
 	
-	public Income(String description, IncomeCategory category){
-		super(description);
+	public Income(String description,float amount, IncomeCategory category){
+		super(description,amount);
 		income_category = category;
 	}
 	
 	
 }
 
+//ENUM, JUST TO MAKE THE CATEGORIES DISTINCTIVE
 enum IncomeCategory {
-	CASH,CARD,SAVINGS,SALARY,PROFIT,GIFT,ANONYMOUS
+	CASH(1),CARD(2),SAVINGS(3),SALARY(4),PROFIT(5),GIFT(6),ANONYMOUS(7);
+	
+	public int value;
+	public ExpenseCategory(int value){  
+	this.value = value;  
 }

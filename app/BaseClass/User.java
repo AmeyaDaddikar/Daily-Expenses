@@ -107,15 +107,20 @@ public class User{
 	{
 		Scanner scan = new Scanner(System.in);
 		
-		
+		 /////This will be the login screen ///////
 		String name = scan.nextLine();
 		String password = scan.nextLine();
 		
 		try{
 			User curr_user = User.login();
 		}catch( Exception e){
+			System.out.println("Invalid user");
 			return;
 		}
+		
+		////In GUI, a message should pop saying that invalid username or password
+		////The login screen will stay up even if login fails
+		
 		
 		
 	}
