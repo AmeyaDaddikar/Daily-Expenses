@@ -60,13 +60,13 @@ public class User{
 	//STATIC FUNCTION FOR LOGIN THAT RETURNS A NEW USER INSTANCE
 	public static User login(String username, String password)throws Exception{
 		
-		boolean isUser = true; //REMOVE THIS LINE. Needed for console debugging only
+		boolean isUser = true; //REMOVE THIS LINE AND THE NEXT FEW AS WELL. Needed for console debugging only
 		 
 		//check if the username exists and password is correct throw exception if wrong
 		//here for the console part, if isUser is false, then the function throws error
 		
 		if(!isUser)
-			throw new Exception();
+			throw new Exception();	
 			
 		User curr_user = new User(username);
 		//get the income_list and expense list from the database

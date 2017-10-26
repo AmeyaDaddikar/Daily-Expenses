@@ -14,7 +14,7 @@ public class Expense extends Data{
 		expense_category = category;
 	}
 	
-	public ExpenseCategory setExpenseCategory(){
+	public ExpenseCategory getExpenseCategory(){
 		return expense_category;
 	}
 	

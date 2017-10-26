@@ -14,7 +14,7 @@ public class Income extends Data{
 		income_category = category;
 	}
 	
-	public IncomeCategory setIncomeCategory(){
+	public IncomeCategory getIncomeCategory(){
 		return income_category;
 	}
 	
