@@ -120,7 +120,7 @@ public class User{
 		String password = scan.nextLine();
 		
 		try{
-			User curr_user = User.login();
+			User curr_user = login(name,password);
 		}catch( Exception e){
 			System.out.println("Invalid user");
 			return;
