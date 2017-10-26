@@ -3,74 +3,120 @@ package Daily1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+I felt there is no real need of saving the password of the user in the program.
+The pasword will be saved in the database only.
+This way the password of the user can be protcted
+*/
+
+
 public class User{
-	Scanner ip=new Scanner(System.in);
-	static Scanner ssc=new Scanner(System.in);
+
 	private String name;
-	private String password;
-	private String description;
+	//private String password;
+	
 	private ArrayList<Expense> expense_list;
 	private ArrayList<Income> income_list;
-	
-	public User(String name, String password){
+
+	//CREATES A USER WITH A NAME AND A PASSWORD
+	public User(String name){
 		this.name = name;
-		this.password = password;
-		this.expense_list = new ArrayList();
-		this.income_list  = new ArrayList();
-	}
-	
-	public User() {
-		
+		//this.password = password;
+		this.expense_list = new ArrayList<>();
+		this.income_list  = new ArrayList<>();
 	}
 
-	public static String getName(){
+	//CREATES A USER WITH A NAME AS "root" AND A PASSWORD ""	
+	public User() {
+		this.name = "root";
+		//this.password = "";
+		this.expense_list = new ArrayList<>();
+		this.income_list  = new ArrayList<>();
+	}
+
+	//SETS NEW NAME FOR THE USER
+	public void setName(String new_name){
+		name = new_name;
+	}
+	
+	//RETURNS THE USER NAME
+	public String getName(){
 		return name;
 	}
 	
-	private static String getPassword(){
-		password=ssc.next();
+	/*//RETURNS THE USER PASSWORD
+	private String getPassword(){
 		return password;
-	}
+	}*/
 
-	public ArrayList<Expense> getExpenses(){
-		System.out.println("Enter description...");
-		description=ip.next();
-		Expense expense=new Expense(description+"");
-		expense_list.add(expense);
-		return this.expense_list;
+	//STATIC FUNCTION FOR LOGIN THAT RETURNS A NEW USER INSTANCE
+	public static User login(String username, String password)throws Exception{
+		
+		boolean isUser = true; //REMOVE THIS LINE. Needed for console debugging only
+		 
+		//check if the username exists and password is correct throw exception if wrong
+		//here for the console part, if isUser is false, then the function throws error
+		
+		if(!isUser)
+			throw new Exception();
+			
+		User curr_user = new User(username);
+		//get the income_list and expense list from the database
+		
+		return curr_user;
 	}
 	
-	public ArrayList<Income> getIncomes(){
-		System.out.println("Enter description...");
-		description=ip.next();
-		Income income=new Income(description+"");
-		income_list.add(income);
-		return this.income_list;
+	//RETURNS THE ENTIRE EXPENSE LIST INSTANCE
+	public ArrayList<Expense> getExpenses(){
+		return expense_list;
 	}
+	
+	//RETURNS THE ENTIRE INCOME LIST INSTANCE
+	public ArrayList<Income> getIncomes(){
+		return income_list;
+	}
+	
+	// ADDS AN EXPENSE TO THE EXPENSE LIST
+	public void addExpense(Expense new_expense){
+		expense_list.add(new_expense); 
+		//add to list in the remote database	
+	}
+	
+	//REMOVES ALL EXPENSES
+	public void deleteAllExpenses(){
+		expense_list.clear();
+		//clear list in the remote database
+	}
+	
+	// ADDS AN INCOME TO THE INCOME LIST
+	public void addIncome(Income new_income){
+		income_list.add(new_income);
+		//add to list in the remote database
+	}
+	
+	//REMOVES ALL INCOMES
+	public void deleteAllIncomes(){
+		income_list.clear();
+		//clear list in the remote database
+	}
+	
+	//Main program is just an illustration of what the core functionalities
+	// of this application can be.
+	//Main to be edited once GUI is being implemented. 
 	public static void main(String[] args)
 	{
-		User u=new User();
-		Scanner sc=new Scanner(System.in);
-		int opt=4;
-		while(opt!=3)
-		{
-		System.out.println("1.INCOME \n2.EXPENSE \n3.EXIT");
-		while(opt>3)
-		{
-			System.out.println("Enter a number between 1 and 3");
-			opt=sc.nextInt();
+		Scanner scan = new Scanner(System.in);
+		
+		
+		String name = scan.nextLine();
+		String password = scan.nextLine();
+		
+		try{
+			User curr_user = User.login();
+		}catch( Exception e){
+			return;
 		}
-		switch(opt)
-		{
-		case 1:
-			u.getIncomes();
-			break;
-		case 2:
-			u.getExpenses();
-			break;
-		default:
-			
-		}
-		}
+		
+		
 	}
 }
