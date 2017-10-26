@@ -14,6 +14,13 @@ public class Expense extends Data{
 		expense_category = category;
 	}
 	
+	public ExpenseCategory setExpenseCategory(){
+		return expense_category;
+	}
+	
+	public void setExpenseCategory(ExpenseCategory category){
+		expense_category = category;
+	}
 }
 
 //ENUM, JUST TO MAKE THE CATEGORIES DISTINCTIVE
@@ -21,7 +28,8 @@ enum ExpenseCategory {
 	CASH(1),CARD(2),STATIONARY(3),ANONYMOUS(4);
 	public int value;  
 	
-	public ExpenseCategory(int value){  
-	this.value = value;  
-
+	ExpenseCategory(int value){  
+		this.value = value;  
+	}
+	
 }

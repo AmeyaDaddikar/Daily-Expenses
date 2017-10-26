@@ -14,6 +14,13 @@ public class Income extends Data{
 		income_category = category;
 	}
 	
+	public IncomeCategory setIncomeCategory(){
+		return income_category;
+	}
+	
+	public void setIncomeCategory(IncomeCategory category){
+		income_category = category;
+	}
 	
 }
 
@@ -22,6 +29,7 @@ enum IncomeCategory {
 	CASH(1),CARD(2),SAVINGS(3),SALARY(4),PROFIT(5),GIFT(6),ANONYMOUS(7);
 	
 	public int value;
-	public ExpenseCategory(int value){  
-	this.value = value;  
+	IncomeCategory(int value){  
+		this.value = value;  
+	}
 }

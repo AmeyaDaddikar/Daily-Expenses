@@ -28,7 +28,7 @@ public class Data {
 
 	
 	//SETS A NEW DESCRIPTION, CAN BE USED IF USER WANTS TO ALTER DATA
-	public String setDescription(String description){
+	public void setDescription(String description){
 		this.description = description;
 	}
 	
