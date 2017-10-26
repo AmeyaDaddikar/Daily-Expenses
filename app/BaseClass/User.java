@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
-I felt there is no real need of saving the password of the user in the program.
+I felt there is no real need of saving the password of the user in the program, as
+usually password is never displayed anywhere.
+The password is required only in the following case
+1 . login
+2 . changing password
+
+If we are going to implement a database, then we can just check the password
+with the database everytime
+
 The pasword will be saved in the database only.
 This way the password of the user can be protcted
 */
