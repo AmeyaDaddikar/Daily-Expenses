@@ -27,4 +27,6 @@ git pull origin master
 git fetch origin master
 ```
 
+##### Do add the JRE files specified by Raj to your project 
+
 
